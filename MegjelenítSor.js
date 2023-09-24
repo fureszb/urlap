@@ -12,8 +12,8 @@ class Megleneitsor {
             console.log(`${key} - ${this.objektum[key]}`);
             txt += `<td>${this.objektum[key]}</td>`;
         }
-        txt+=`<td><button>Kész</button>`;
-        txt+=`<button>Töröl</button></td>`;
+        txt+=`<td><button class="kesz">Kész</button>`;
+        txt+=`<button class="torol">Töröl</button></td>`;
         txt += "</tr>";
         this.tablaElem.append(txt);
     }

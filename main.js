@@ -20,4 +20,7 @@ $(function(){
         //console.log(event.detail)
         //new MegjelenitSor(event.detail, elem);
       });
+    $(window).on("torol", (event)=>{
+        event.detail.sorElem.remove();
+    });
 })

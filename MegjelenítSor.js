@@ -5,6 +5,10 @@ class Megleneitsor {
         this.tablaElem = szuloELem;
         this.sorElem = this.tablaElem.children("tr:last-child");
         this.#sor();
+        this.bezarElem = this.sorElem.children("td").children(".torol");
+        this.bezarElem.on("click", ()=>{
+            this.TorolTrigger();
+        })
     }
     #sor() {
         let txt = "<tr>";
@@ -16,6 +20,10 @@ class Megleneitsor {
         txt+=`<button class="torol">Töröl</button></td>`;
         txt += "</tr>";
         this.tablaElem.append(txt);
+    }
+    TorolTrigger(){
+        const torolTr = new CustomEvent("torol", {detail : this});
+        window.dispatchEvent(torolTr);
     }
 }
 export default Megleneitsor;
